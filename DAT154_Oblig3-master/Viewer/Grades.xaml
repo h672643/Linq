@@ -1,0 +1,33 @@
+﻿<Window x:Class="Viewer.Grades"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Viewer"
+        mc:Ignorable="d"
+        Title="Grades" Height="600" Width="800"
+        Background="BlanchedAlmond">
+    <Grid>
+        <ListView Name="gradeList" ItemsSource="{Binding}" Margin="50,0,50,84" Background="AliceBlue">
+            <ListView.View>
+                <GridView>
+                    <GridView.Columns>
+                        <GridViewColumn Width="100" Header="Student ID" DisplayMemberBinding="{Binding Path=studentid}"/>
+                        <GridViewColumn Width="200" Header="Student Name" DisplayMemberBinding="{Binding Path=student.studentname}"/>
+                        <GridViewColumn Width="100" Header="Course Code" DisplayMemberBinding="{Binding Path=coursecode}"/>
+                        <GridViewColumn Width="200" Header="Course Name" DisplayMemberBinding="{Binding Path=course.coursename}"/>
+                        <GridViewColumn Width="50" Header="Grade" DisplayMemberBinding="{Binding Path=grade1}"/>
+                    </GridView.Columns>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <TextBox Name="SearchField" TextWrapping="Wrap" Text="" Background="LightBlue" Margin="223,0,0,25" Height="25" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="90" TextChanged="Search"/>
+        <Label Content="Search for student by name:" Margin="43,0,0,20" FontWeight="Bold" HorizontalAlignment="Left" Width="180" Height="30" VerticalAlignment="Bottom"/>
+
+        <TextBox Name="FilterField" TextWrapping="Wrap" Text="" Background="LightBlue" Margin="552,0,0,25" Height="25" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="30" TextChanged="Filter"/>
+        <Label Content="Show grades greater and equal:" Margin="353,0,0,20" FontWeight="Bold" HorizontalAlignment="Left" Width="194" Height="30" VerticalAlignment="Bottom"/>
+
+        <Button Name="Failed" Content="Show failed students" Margin="626,0,0,25" Height="25" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="142" Click="Failed_Click"/>
+
+    </Grid>
+</Window>

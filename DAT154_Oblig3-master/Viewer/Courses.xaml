@@ -1,0 +1,25 @@
+﻿<Window x:Class="Viewer.Courses"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Viewer"
+        mc:Ignorable="d"
+        Title="Courses" Height="400" Width="800"
+        Background="BlanchedAlmond">
+    <Grid>
+        <ListView Name="courseList" ItemsSource="{Binding}" Margin="100,0,100,84" Background="AliceBlue" MouseDoubleClick="View">
+            <ListView.View>
+                <GridView>
+                    <GridView.Columns>
+                        <GridViewColumn Width="100" Header="Code" DisplayMemberBinding="{Binding Path=coursecode}"/>
+                        <GridViewColumn Width="200" Header="Name" DisplayMemberBinding="{Binding Path=coursename}"/>
+                        <GridViewColumn Width="60" Header="Semester" DisplayMemberBinding="{Binding Path=semester}"/>
+                        <GridViewColumn Width="200" Header="Teacher" DisplayMemberBinding="{Binding Path=teacher}"/>
+                    </GridView.Columns>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Label Content="Double-Click a course to view all students" Margin="0,330,0,0" FontWeight="Bold" HorizontalAlignment="Center" Width="261" Height="30" VerticalAlignment="Top"/>
+    </Grid>
+</Window>

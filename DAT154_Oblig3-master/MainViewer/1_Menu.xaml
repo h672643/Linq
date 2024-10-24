@@ -1,0 +1,16 @@
+﻿<Window x:Class="Main._1_Menu"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Main"
+        mc:Ignorable="d"
+        Title="Menu" Height="200" Width="800"
+        Background="BlanchedAlmond">
+    <Grid>
+        <Button x:Name="View_Students" Content="View Students" Margin="60,65,540,64" Click="View_Students_Click"/>
+        <Button x:Name="View_Grades" Content="View Student Grades" Margin="300,65,300,64" Click="View_Grades_Click"/>
+        <Button x:Name="View_Courses" Content="View Courses" Margin="540,65,60,64" Click="View_Courses_Click"/>
+
+    </Grid>
+</Window>

@@ -1,0 +1,26 @@
+﻿<Window x:Class="Main.Students"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Main"
+        mc:Ignorable="d"
+        Title="Students" Height="600" Width="600"
+        Background="BlanchedAlmond">
+
+    <Grid>
+        <ListView Name="studentList" ItemsSource="{Binding}" Margin="100,0,100,50" Background="AliceBlue">
+            <ListView.View>
+                <GridView>
+                    <GridView.Columns>
+                        <GridViewColumn Width="50" Header="ID" DisplayMemberBinding="{Binding Path=id}"/>
+                        <GridViewColumn Width="200" Header="Student" DisplayMemberBinding="{Binding Path=studentname}"/>
+                        <GridViewColumn Width="50" Header="Age" DisplayMemberBinding="{Binding Path=studentage}"/>
+                    </GridView.Columns>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Button Content="Manage Students" Margin="0,0,140,10" Width="100" Height="25" VerticalAlignment="Bottom" HorizontalAlignment="Right" />
+        <TextBox Name="SearchField" TextWrapping="Wrap" Text="" Background="LightBlue" Foreground="Gray" Margin="100,0,0,10" Height="25" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="150" TextChanged="TextBox_TextChanged"/>
+    </Grid>
+</Window>
